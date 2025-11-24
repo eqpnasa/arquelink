@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>ArqueLink</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- seção de feed -->
+
+<body>
+
+  <header id="Header">
+    <h1>🌍 ArqueLink</h1>
+    <input type="text" id="search" class="pesquisaBarra" placeholder="Pesquise aqui..."></input>
+    <button onclick="backPost()" type="button" class="novoPost">Novo Post</button>
+    <a onclick="openProfile()" id="profileBtn">Perfil</a>
+    <img src="../img/img_profile.png" class="img_profile" id="img"></img>
+  </header>
+
+  <section id="feed">
+    
+  </section>
+
+<!-- seção de criar um post -->
+
+  <section id="novaPostagem">
+    <form id="postForm">
+      <h1>Nova Descoberta Arqueológica</h1>
+
+      <label for="title">Título:</label>
+      <textarea id="title" rows="1"></textarea><br><br>
+      
+      <label>Imagem:</label><br>
+      <img id="imagem" style="max-width:200px;"><br><br>
+
+      <label for="image">Escolher Imagem:</label>
+      <input onchange="imageLoader()" type="file" id="image" accept="image/*"><br><br>
+
+      <label for="description">Descrição:</label>
+      <textarea id="description" rows="3"></textarea><br><br>
+      
+      <label for="location">Coordenadas:</label>
+      <label for="location">Eixo X:</label>
+      <input type="number" id="eixoX"><br><br>
+
+      <label for="location">Eixo Y:</label>
+      <input type="number" id="eixoY"><br><br>
+
+      <label for="date">Data:</label>
+      <input type="date" id="date"><br><br>
+
+      <label for="time">Hora:</label>
+      <input type="time" id="time"><br><br>
+
+      <label for="material">Material:</label>
+      <select id="material">
+        <option value="Cerâmica">Cerâmica</option>
+        <option value="Metal">Metal</option>
+        <option value="Pedra">Pedra</option>
+        <option value="Ossos">Ossos</option>
+        <option value="Vegetal">Vegetal</option>
+        <option value="Carvão">Carvão</option>
+        <option value="Madeira">Madeira</option>
+        <option value="Couro">Couro</option>
+        <option value="Faiança">Faiança</option>
+        <option value="Faiança Fina">Faiança Fina</option>
+        <option value="Grés">Grés</option>
+        <option value="Registros Rupestres">Registro Rupestre</option>
+        <option value="Vidro">Vidro</option>
+        <option value="Porcelana">Porcelana</option>
+        <option value="Vestigios Humanos">Vestigios Humanos</option>
+        <option value="Borracha">Borracha</option>
+        <option value="Malacologico">Malacologico</option>
+        <option value="Têxtil">Têxtil</option>
+      </select><br><br>
+
+      <label for="color">Cor:</label>
+      <select id="color">
+        <option value="Monocromático">Monocromático</option>
+        <option value="Policromatico">Policromático</option>
+        <option value="Indeterminado">Indeterminado</option>
+        <option value="Outros">Outros</option>
+      </select><br><br>
+
+      <label for="category">Categoria:</label>
+      <select id="category">
+        <option value="Artefato">Artefato</option>
+        <option value="Ecofato">Ecofato</option>
+        <option value="Fóssil">Bioarqueológico</option>
+        <option value="Estrutura">Estrutura/Feição</option>
+        <option value="Sedimento/Solo">Sedimento/Solo</option>
+        <option value="Zooarqueológico">Zooarqueológico</option>
+        <option value="Arqueobotânico">Arqueobotânico</option>
+        <option value="Outros">Outros</option>
+      </select><br><br>
+
+      <label for="Integridade">Integridade:</label>
+      <select id="integrity">
+        <option value="Íntegro">Íntegro</option>
+        <option value="Fragmentado">Fragmentado</option>
+        <option value="Reconstruido">Reconstruido</option>
+      </select><br><br>
+
+      <button onclick="enviarPost()" type="button" id="submitBtn">Enviar</button>
+      <button onclick="backFeed(event)" type="button" class="Home_Page">Voltar ao Feed</button>
+    </form>
+  </section>
+
+  <section id="perfil">
+    <form id="perfilForm">
+    <h1>Perfil do Usuário</h1>
+    <button onclick="backFeed(event)" type="button" class="Home_Page">Voltar ao Feed</button>
+    <div id="userInfo">
+      <img src="../img/img_profile.png" class="img_profile_large" id="imgPerfil"></img>
+      <h2 id="usernamePerfil">Nome de Usuário</h2>
+      <p id="emailPerfil"></p>
+      <p id="bioPerfil">Bio do usuário...</p>
+      <button type="button" onclick="logout()" class="logoutBtn">Sair da Conta</button>
+      <h2>Minhas Postagens</h2>
+        <main id="perfil__posts">
+
+        </main>
+
+    </div>
+    </form>
+  </section>
+
+  <section id="singup">
+    <form>
+      <label>Cadastro</label>
+
+      <label>Nome:</label>
+      <textarea placeholder="nome" id="name"></textarea>
+      
+      <label>Email:</label>
+      <input type="email" placeholder="123@example.com" id="email"></input>
+
+      <label>Senha:</label>
+      <input type="password" placeholder="senha" minlength="6" maxlength="16" id="senha" required></input>
+      
+      <label>Confirmar Senha:</label>
+      <input type="password" placeholder="senha" id="senhaConfirm" required></textarea>
+
+      <button type="button" onclick="singUp()" id="cadastrar__btn">Cadastrar</button>
+      <a type="button" onclick="goToLogIn()" id="goToLogIn">logIn</a>
+    </form>
+  </section>
+
+  <section id="login">
+    <form>
+      <h1>Entrar</h1>
+      <label>Email:</label>
+      <input type="email" placeholder="123@example.com" id="emailLogin"></input>
+
+      <label>Senha:</label>
+      <input type="password" placeholder="senha" id="senhaLogin"></input>
+
+      <button type="button" onclick="logIn()" id="entrar__btn">Entrar</button>
+      <a type="button" onclick="goToSingUp()" id="goToSingUp">SingUp</a>
+    </form>
+    </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

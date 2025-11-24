@@ -1,0 +1,308 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* IMAGEM DE PERFIL GRANDE */
+.img_profile_large {
+  image-resolution: initial;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-image: url("../img/fundo2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding-bottom: 50px;
+}
+
+/* HEADER */
+header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.096);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.096);
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  font-size: 22px;
+  color: #27ae60;
+}
+
+header nav {
+  display: flex;
+  gap: 15px;
+}
+
+.pesquisaBarra {
+  width: 40%;
+  border: 1px solid #777;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.perfil,
+.novoPost,
+.Home_Page {
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 10px 18px;
+  font-size: 14px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.perfil {
+  background: #cfe3d7;
+  color: #111;
+}
+
+.novoPost,
+.Home_Page {
+  background: #27ae60;
+  color: white;
+}
+
+.novoPost:hover,
+.Home_Page:hover {
+  background: #219150;
+}
+
+/* PROFILE IMAGE */
+.img_profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+/* FEED */
+main#feed {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+/* POST */
+.post {
+  margin: 0 auto 20px auto; /* Centraliza o post */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+}
+
+
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #27ae60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  margin-right: 10px;
+  color: white;
+}
+
+.post-header h2 {
+  font-size: 16px;
+}
+
+.post-header .meta {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.post img:not(.img_profile) {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px 0;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* DESCRIÇÃO */
+.descricao {
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+ul.info {
+  list-style: none;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 13.5px;
+}
+
+ul.info li {
+  margin: 4px 0;
+}
+
+ul.info li strong {
+  color: #27ae60;
+}
+
+/* AÇÕES */
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.acoes button {
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.acoes button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* FORM */
+form {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+form h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+label {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #777;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+select {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("seta.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  backdrop-filter: blur(10px);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #219150;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .pesquisaBarra {
+    width: 90%;
+  }
+
+  form {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .post img:not(.img_profile) {
+    height: 220px;
+  }
+
+  #imagem {
+    width: 200px;
+    height: 200px;
+  }
+}
