@@ -1,0 +1,395 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* IMAGEM DE PERFIL GRANDE */
+.img_profile_large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-image: url("../img/fundo2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding-bottom: 80px;
+}
+
+/* HEADER */
+header{
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+
+.checkbox-container label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Área do checkbox de termos */
+.terms-wrapper {
+  width: 100%;
+  margin: 20px 0 10px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1.4;
+  max-width: 80%;
+}
+
+/* Checkbox */
+.terms-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #27ae60; /* Deixa verde bonitinho */
+}
+
+/* Em telas menores */
+@media screen and (max-width: 650px) {
+  .terms-checkbox {
+    font-size: 14px;
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .terms-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+header h1,
+footer h1 {
+  font-size: 22px;
+  color: #27ae60;
+}
+
+header nav,
+footer nav {
+  display: flex;
+  gap: 12px;
+}
+
+.pesquisaBarra {
+  width: 40%;
+  border: 1px solid #777;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* BOTÕES DO HEADER */
+.perfil,
+.novoPost,
+.Home_Page {
+  text-decoration: none;
+  border-radius: 16px;
+  padding: 10px 16px;
+  font-size: 14px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.perfil {
+  background: #cfe3d7;
+  color: #111;
+}
+
+.novoPost,
+.Home_Page {
+  background: #27ae60;
+  color: white;
+}
+
+.novoPost:hover,
+.Home_Page:hover {
+  background: #219150;
+}
+
+/* PROFILE IMAGE */
+.img_profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+/* FEED */
+main#feed {
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto;
+  padding: 0 15px;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* POST */
+.post {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin: 0 auto 25px auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.post-header h2 {
+  font-size: 16px;
+}
+
+.post-header .meta {
+  font-size: 12px;
+  color: #ccc;
+}
+
+/* IMAGEM DO POST */
+.post img:not(.img_profile) {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 12px 0;
+  display: block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+/* DESCRIÇÃO */
+.descricao {
+  font-size: 14px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* CAIXA DE INFO */
+ul.info {
+  list-style: none;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.13);
+  font-size: 13.5px;
+}
+
+ul.info li {
+  margin: 4px 0;
+}
+
+ul.info li strong {
+  color: #27ae60;
+}
+
+/* AÇÕES */
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.acoes button {
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.acoes button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* FORM (NOVO POST / EDITAR PROFILE) */
+form {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+.ArqueForm {
+  border: chocolate;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+form h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+label {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #777;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+/* SELECT */
+select {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 16px;
+  appearance: none;
+  background-image: url("seta.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* BOTÕES */
+button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #219150;
+}
+
+/* RESPONSIVO PARA CELULAR */
+@media screen and (max-width: 650px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  header nav {
+    gap: 10px;
+  }
+
+  .pesquisaBarra {
+    width: 95%;
+  }
+
+  form {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .post img:not(.img_profile) {
+    max-height: 220px;
+  }
+
+  .post {
+    padding: 12px;
+  }
+
+  .acoes button {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .img_profile_large {
+    width: 100px;
+    height: 100px;
+  }
+}

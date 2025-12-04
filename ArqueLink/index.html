@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>ArqueLink</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- seção de feed -->
+
+<body>
+
+  <header id="Header">
+    <h1>🌍 ArqueLink</h1>
+    <input type="text" id="search" class="pesquisaBarra" placeholder="Pesquise aqui..."></input>
+    <button onclick="backPost()" type="button" class="novoPost">Novo Post</button>
+    <a onclick="openProfile()" id="profileBtn">Perfil</a>
+    <img data-user-img src="../img/img_profile.png" class="img_profile" id="img"></img>
+  </header>
+
+  <section id="feed">
+    
+  </section>
+
+<!-- seção de criar um post -->
+
+  <section id="novaPostagem">
+    <form id="postForm">
+      <h1>Nova Descoberta Arqueológica</h1>
+
+      <label for="title">Título:</label>
+      <textarea id="title" rows="1"></textarea><br><br>
+      
+      <label>Imagem:</label><br>
+      <img id="imagem" style="max-width:200px;"><br><br>
+
+      <label for="image">Escolher Imagem:</label>
+      <input onchange="imageLoader()" type="file" id="image" accept="image/*"><br><br>
+
+      <label for="description">Descrição:</label>
+      <textarea id="description" rows="3"></textarea><br><br>
+      
+      <label for="location">Coordenadas:</label>
+      <label for="location">Longitude:</label>
+      <input type="number" id="eixoX"><br><br>
+
+      <label for="location">Latitude:</label>
+      <input type="number" id="eixoY"><br><br>
+
+      <label for="date">Data:</label>
+      <input type="date" id="date"><br><br>
+
+      <label for="time">Hora:</label>
+      <input type="time" id="time"><br><br>
+
+      <label for="material">Material:</label>
+      <select id="material">
+        <option value="Cerâmica">Cerâmica</option>
+        <option value="Metal">Metal</option>
+        <option value="Pedra">Pedra</option>
+        <option value="Ossos">Ossos</option>
+        <option value="Vegetal">Vegetal</option>
+        <option value="Carvão">Carvão</option>
+        <option value="Madeira">Madeira</option>
+        <option value="Couro">Couro</option>
+        <option value="Faiança">Faiança</option>
+        <option value="Faiança Fina">Faiança Fina</option>
+        <option value="Grés">Grés</option>
+        <option value="Registros Rupestres">Registro Rupestre</option>
+        <option value="Vidro">Vidro</option>
+        <option value="Porcelana">Porcelana</option>
+        <option value="Vestigios Humanos">Vestigios Humanos</option>
+        <option value="Borracha">Borracha</option>
+        <option value="Malacologico">Malacologico</option>
+        <option value="Têxtil">Têxtil</option>
+      </select><br><br>
+
+      <label for="color">Cor:</label>
+      <select id="color">
+        <option value="Monocromático">Monocromático</option>
+        <option value="Policromatico">Policromático</option>
+        <option value="Indeterminado">Indeterminado</option>
+        <option value="Outros">Outros</option>
+      </select><br><br>
+
+      <label for="category">Categoria:</label>
+      <select id="category">
+        <option value="Artefato">Artefato</option>
+        <option value="Ecofato">Ecofato</option>
+        <option value="Fóssil">Bioarqueológico</option>
+        <option value="Estrutura">Estrutura/Feição</option>
+        <option value="Sedimento/Solo">Sedimento/Solo</option>
+        <option value="Zooarqueológico">Zooarqueológico</option>
+        <option value="Arqueobotânico">Arqueobotânico</option>
+        <option value="Outros">Outros</option>
+      </select><br><br>
+
+      <label for="Integridade">Integridade:</label>
+      <select id="integrity">
+        <option value="Íntegro">Íntegro</option>
+        <option value="Fragmentado">Fragmentado</option>
+        <option value="Reconstruido">Reconstruido</option>
+      </select><br><br>
+
+      <button onclick="enviarPost()" type="button" id="submitBtn">Enviar</button>
+      <button onclick="backFeed(event)" type="button" class="Home_Page">Voltar ao Feed</button>
+    </form>
+  </section>
+
+  <section id="perfil">
+    <form id="perfilForm">
+    <h1>Perfil do Usuário</h1>
+    <button type="button" onclick="goToConfig()">Config⚙️</button><br><br>
+    <button onclick="backFeed(event)" type="button" class="Home_Page">Voltar ao Feed</button>
+    <div id="userInfo">
+      <img data-user-img src="../img/img_profile.png" class="img_profile_large" id="img"></img>
+      <h2 id="usernamePerfil">Nome de Usuário</h2>
+      <p id="emailPerfil"></p>
+      <p id="bioPerfil">Bio do usuário...</p>
+      <button type="button" onclick="logout()" class="logoutBtn">Sair da Conta</button>
+      <h2>Minhas Postagens</h2>
+        <main id="perfil__posts">
+
+        </main>
+
+    </div>
+    </form>
+  </section>
+
+  <section id="singup">
+    <form>
+      <label>Cadastro</label>
+
+      <label>Nome:</label>
+      <textarea placeholder="nome" id="name"></textarea>
+      
+      <label>Email:</label>
+      <input type="email" placeholder="123@example.com" id="email"></input>
+
+      <label>Senha:</label>
+      <input type="password" placeholder="senha" minlength="6" maxlength="16" id="senha" required></input>
+      
+      <label>Confirmar Senha:</label>
+      <input type="password" placeholder="senha" id="senhaConfirm" required></textarea>
+
+      <label class="checkbox-container">
+        <input type="checkbox" id="termosCheckbox">
+         <span>Eu concordo com os termos de uso e politicas da plataforma</span>
+      </label>
+
+      <a onclick="Terms()">Termos de Uso e Politicas</a><br>
+
+      <button type="button" onclick="singUp()" id="cadastrar__btn">Cadastrar</button>
+      <a type="button" onclick="goToLogIn()" id="goToLogIn">logIn</a>
+    </form>
+  </section>
+
+  <section id="login">
+    <form>
+      <h1>Entrar</h1>
+      <label>Email:</label>
+      <input type="email" placeholder="123@example.com" id="emailLogin"></input>
+
+      <label>Senha:</label>
+      <input type="password" placeholder="senha" id="senhaLogin"></input>
+
+      <button type="button" onclick="logIn()" id="entrar__btn">Entrar</button>
+      <a type="button" onclick="goToSingUp()" id="goToSingUp">SingUp</a>
+    </form>
+  </section>
+
+  <section id="contactuss">
+   <form>
+    <h1>Contact Uss</h1>
+    <br><br>
+    <label>Email</label><br>
+    <p>eqpnasa@gmail.com</p>
+    <label>Por que nos contatar?</label>
+    <p>
+Estamos sempre prontos para ajudar e garantir a melhor experiência possível dentro da nossa plataforma. Caso precise falar conosco, você pode entrar em contato pelos seguintes motivos:
+<br>
+• Denunciar uma publicação<br>
+Se você encontrou algum conteúdo inadequado, ofensivo ou que viole nossas regras, envie uma denúncia para que possamos analisar e tomar as medidas necessárias.
+<br>
+• Denunciar contas<br>
+Perfis que apresentam comportamento suspeito, falso, ofensivo ou que descumprem nossos termos podem ser reportados diretamente para nossa equipe.
+<br>
+• Reportar bugs<br>
+Achou algum erro, travamento ou comportamento inesperado no site? Nos avise para que possamos corrigir o mais rápido possível.
+<br>
+• Enviar perguntas ou dúvidas gerais<br>
+Se tiver qualquer dúvida sobre o funcionamento da plataforma, estamos aqui para responder.
+<br>
+• Solicitar verificação de perfil<br>
+Caso você deseje solicitar o selo de verificação, é aqui que você pode iniciar o processo.
+<br>
+• Termos e Políticas<br>
+Dúvidas relacionadas às nossas regras, privacidade, uso de dados ou diretrizes podem ser enviadas neste canal.
+<br>
+• Outros assuntos<br>
+Se o seu motivo não estiver listado acima, basta nos explicar — nossa equipe terá prazer em ajudar.</p>
+   </form>
+  </section>
+
+  <section id="config_Profile">
+    <form>
+      <h1>Configurar Conta</h1>
+      <img data-user-img src="img/img_profile.png" id="mudarImgProfile__Img" class="img_profile_large">
+      <input type="file" onchange="mudarProfile()"></input>
+      <label>Mondificar descrição</label>
+      <input type="text" id="bioModificar" placeholder="modificar descrição"></input>
+      <label>Modificar Nome</label>
+      <input type="text" id="nomeModificar" placeholder="modificar nome"></input>
+      <button type="button" onclick="salvarConfigProfile()" id="button_profile_modificar">Salvar</input>
+    </form>
+  </section>
+  
+
+  <section id="Terms">
+    <form>
+    <h1>Termos de Uso e Políticas da Plataforma</h1>
+    <br>
+    <br>
+    <p>
+      1. Uso Geral da Plataforma<br>
+<br>
+1.1. O usuário se compromete a utilizar o site de maneira responsável, ética e respeitosa.<br>
+1.2. É proibido publicar qualquer conteúdo que viole leis, direitos de terceiros ou as diretrizes da plataforma.<br>
+1.3. O uso da plataforma implica aceitação total das Políticas de Privacidade e demais normas vinculadas.<br>
+<br>
+2. Conteúdos Relacionados a Achados Arqueológicos<br>
+<br>
+2.1. O usuário concorda em postar apenas achados arqueológicos verídicos, autênticos e devidamente identificados, evitando falsificações, invenções ou informações enganosas.<br>
+2.2. A divulgação de informações falsas, manipuladas ou sem base em evidências poderá resultar em advertência, remoção de conteúdo ou suspensão da conta.<br>
+2.3. Sempre que possível, recomenda-se citar fontes, procedência e contexto histórico dos artefatos compartilhados.<br>
+<br>
+3. Uso de Imagens e Comparação de Artefatos<br>
+<br>
+3.1. Ao utilizar a plataforma, o usuário autoriza o uso das imagens enviadas (inclusive fotos de artefatos) para fins internos de comparação, estudo, curadoria, melhorias de serviço e análise de dados (analytics).<br>
+3.2. Esse uso é não exclusivo, gratuito e limitado ao ambiente do site.<br>
+3.3. Nenhuma imagem será revendida, exportada ou utilizada fora da plataforma sem autorização expressa do usuário.<br>
+<br>
+4. Conduta e Formalidade<br>
+<br>
+4.1. O usuário concorda em manter uma postura formal e respeitosa nos posts, comentários e interações dentro da plataforma.<br>
+4.2. Linguagem ofensiva, preconceituosa, inadequada ou contrária ao propósito acadêmico/cultural da comunidade não será tolerada.<br>
+4.3. Debates são bem-vindos, desde que realizados com cordialidade e foco no tema.<br>
+<br>
+5. Identidade e Veracidade das Informações Pessoais<br>
+<br>
+5.1. O usuário concorda em manter a veracidade de sua identidade e informações pessoais dentro do site.<br>
+5.2. É proibido criar contas falsas, utilizar nomes ou identidades de terceiros ou induzir outros usuários ao erro.<br>
+5.3. Perfis suspeitos poderão ser suspensos para verificação adicional.<br>
+<br>
+6. Denúncias e Moderação<br>
+<br>
+6.1. Os usuários podem denunciar conteúdos inadequados, perfis suspeitos ou violações destes termos.<br>
+6.2. A plataforma se reserva o direito de remover qualquer conteúdo que viole as diretrizes, mesmo sem aviso prévio.<br>
+6.3. Medidas disciplinares podem incluir:<br>
+• Advertência<br>
+• Remoção de postagens<br>
+• Suspensão temporária<br>
+• Banimento definitivo<br>
+<br>
+7. Responsabilidades do Usuário<br>
+<br>
+7.1. O usuário é responsável por tudo que publica, compartilha ou envia ao site.<br>
+7.2. O usuário concorda em não violar direitos autorais, de imagem ou propriedade intelectual de terceiros.<br>
+7.3. É de responsabilidade do usuário revisar periodicamente os Termos de Uso, que podem ser atualizados.<br>
+<br>
+8. Responsabilidades da Plataforma<br>
+<br>
+8.1. A plataforma não se responsabiliza por informações falsas enviadas por usuários.<br>
+8.2. O site poderá limitar, suspender ou encerrar funcionalidades sem aviso prévio caso necessário.<br>
+8.3. O site se compromete a proteger dados pessoais de acordo com a legislação vigente.<br>
+<br>
+9. Aceitação dos Termos<br>
+<br>
+Ao criar uma conta ou utilizar qualquer funcionalidade da plataforma, você declara que leu, entendeu e concorda com todos os itens deste Termo de Uso, incluindo:<br>
+• Publicar apenas achados arqueológicos verídicos<br>
+• Autorizar uso interno de imagens de artefatos<br>
+• Manter postura formal<br>
+• Preservar a veracidade de sua identidade<br>
+    </p>
+    </form>
+  </section>
+  <footer id="footer">
+    <p>Todos direitos reservados à Nação Android Sesi Adonias©</p>
+    <a onclick="Contact_uss()">Contact Uss</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
